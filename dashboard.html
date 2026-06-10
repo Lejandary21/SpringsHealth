@@ -8,28 +8,50 @@
 </head>
 
 <body>
-    <div class="side-menu">
-        <div class="brand-name">
-            <h1>SpringsManager</h1>
-        </div>
-        <ul>
-            <li><img src="Placeholder" alt="">Dashboard</li>
-            <li><img src="placeholder" alt="">Patient Mangement</li>
-            <li><img src="placeholder" alt="">Data Entry Forms</li>
-            <li><img src="placeholder" alt="">Log Out</li>
-            <li><img src="placeholder" alt="">Help</li>
-            <li><img src="placeholder" alt="">Settings</li>
-        </ul>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <h2>SpringsHealth</h2>
+            <nav>
+                <ul>
+                    <li><a href="Placeholder" class="active">Dashboard</a></li>
+                    <li><a href="Placeholder">Patient Management</a></li>
+                    <li><a href="Placeholder">Data Forms</a></li>
+                    <li><a href="Placeholder">Settings</a></li>
+                    <li><a href="Placeholder">Help</a></li>
+                </ul>
+            </nav>
+            <button id="logout-btn">Log Out</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Dashboard Overview</h1>
+                <div class="user-profile">Anon Nurse Admin</div>
+            </header>
+
+            <section class="data-section">
+                <h2>Student Medical Records</h2>
+                <table id="medical-data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Year</th>
+                            <th>Age</th>
+                            <th>Sickness/Status</th>
+                            <th>Allergies</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <td colspan="5" class="loading-text">No data loaded yet...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        
     </div>
-    <div class="container'>
-        <div class="header">
-            <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="search-icon.png" ></button>
-                </div>
-                <div class="user">
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="app.js"></script>
+</body>
+</html>
