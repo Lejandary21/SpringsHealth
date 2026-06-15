@@ -130,3 +130,29 @@ th {
     font-weight: 500; 
     color: #333; 
 }
+
+
+.sidebar nav ul li a {
+    display: block; 
+    padding: 15px 20px;
+    color: #e0e0e0; 
+    text-decoration: none; 
+    border-left: 4px solid transparent; 
+    
+    transition: all 0.3s ease; 
+}
+
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15); 
+    color: #ffffff; 
+    border-left: 4px solid #ffffff; 
+}
+
+
+.sidebar nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-left: 4px solid #ffffff;
+    font-weight: bold;
+}
