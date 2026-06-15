@@ -100,3 +100,33 @@ th {
     text-align: center;
     color: #777;
 }
+
+
+
+.user-profile {
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.user-avatar {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    background-color: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar img {
+    width: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.user-name {
+    font-weight: 500; 
+    color: #333; 
+}
