@@ -14,11 +14,11 @@
             <h2>SpringsHealth</h2>
             <nav>
                 <ul>
-                    <li><a href="dashboard.html" id="nav-dashboard" class="active">Dashboard</a></li>
+                    <li><a href="dashboard.html" id="nav-dashboard">Dashboard</a></li>
                     <li><a href="patient.html" id="nav-patients">Patient Management</a></li>
                     <li><a href="data-forms.html" id="nav-data-forms">Data Forms</a></li>
                     <li><a href="settings.html" id="nav-settings">Settings</a></li>
-                    <li><a href="help.html" id="nav-help">Help</a></li>
+                    <li><a href="help.html" id="nav-help" class="active">Help</a></li>
                 </ul>
             </nav>
             <button id="logout-btn">Log Out</button>
@@ -34,3 +34,40 @@
                     <span class="user-name">Anon Nurse Admin</span>
                 </div>
             </header>
+            <section class="help-grid">
+                <div class="help-card faq-card">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <p class="faq-question">How do I add a new patient?</p>
+                        <p class="faq-answer">Navigate to the Patient Management tab and click the green "+ Add New Patient" button at the top of the screen.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-question">What does the Red Badge mean?</p>
+                        <p class="faq-answer">The red "High Risk" badge indicates a student with a severe medical condition, such as anaphylaxis, that requires an immediate action plan.</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-question">How do I update my email address?</p>
+                        <p class="faq-answer">Go to the Settings tab, update the email field under Profile Details, and click "Save All Changes" at the bottom.</p>
+                    </div>
+                </div>
+                <div class="help-card support-card">
+                    <h3>✉️ Contact IT Support</h3>
+                    <p class="support-desc">Experiencing a technical issue? Send a message to the school IT department.</p>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="e.g., Cannot export CSV file" class="settings-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Describe the issue you are facing..." class="settings-input support-textarea"></textarea>
+                    </div>
+                    
+                    <button class="primary-btn">Send Message</button>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

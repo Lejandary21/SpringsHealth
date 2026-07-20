@@ -436,3 +436,64 @@ input:checked + .slider:before {
     display: flex;
     justify-content: flex-end; 
 }
+
+/* Help Page CSS */
+
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px;
+}
+
+.help-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e0e6ed;
+}
+
+.help-card h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 10px;
+}
+
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-question {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.faq-answer {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.support-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.support-textarea {
+    resize: vertical; 
+    font-family: inherit;
+}
