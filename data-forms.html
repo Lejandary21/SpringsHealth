@@ -9,18 +9,63 @@
 
 <body>
     <div class="dashboard-container">
-        
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <h2>SpringsHealth</h2>
             <nav>
                 <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="patient.html">Patient Management</a></li>
-                    <li><a href="data-forms.html" class="active">Data Forms</a></li>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="patients.html">Patient Management</a></li>
+                    <li><a href="forms.html" class="active">Data Forms</a></li>
                     <li><a href="settings.html">Settings</a></li>
                     <li><a href="help.html">Help</a></li>
                 </ul>
             </nav>
             <button id="logout-btn">Log Out</button>
-        </aside
+        </aside>
+
+
+        <main class="main-content">
+            <header>
+                <h1>Data Entry Forms</h1>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="profilepicnew.png" alt="Profile">
+                    </div>
+                    <span class="user-name">Anon Nurse Admin</span>
+                </div>
+            </header>
+            <section class="form-container">
+                <div class="settings-card">
+                    <h3>📝 Add New Student Record</h3>
+                    
+                    <form id="new-student-form">
+                        <div class="form-group">
+                            <label>Student Full Name</label>
+                            <input type="text" id="student-name" class="settings-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Year Level</label>
+                            <input type="number" id="student-year" class="settings-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" id="student-age" class="settings-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Known Allergies / Sickness</label>
+                            <input type="text" id="student-allergies" class="settings-input" placeholder="e.g., Peanut Allergy, Asthma, N/A">
+                        </div>
+
+                        <button type="submit" class="primary-btn">Save to Database</button>
+                    </form>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    <script src="SPH.js"></script>
+</body>
+</html>
