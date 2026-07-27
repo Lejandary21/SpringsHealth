@@ -34,68 +34,41 @@
                     <span class="user-name">Anon Nurse Admin</span>
                 </div>
             </header>
-            <div class="management-controls">
-                <input type="text" id="patient-search" placeholder="Search by student name or year...">
-                <button class="primary-btn">+ Add New Patient</button>
-            </div>
-
-            <section class="patient-profile-card">
-                
-                <div class="profile-header">
-                    <h2>Sarah Doe</h2>
-                    <span class="status-badge high-risk">High Risk: N/A</span>
-                </div>
-
-                <div class="profile-grid">
-                    <div class="info-block">
-                        <h3>General Details</h3>
-                        <p><strong>Year:</strong> 13</p>
-                        <p><strong>Age:</strong> 18</p>
-                        <p><strong>DOB:</strong> 14/02/2008</p>
-                    </div>
-
-                    <div class="information">
-                        <h3>Emergency Contacts</h3>
-                        <p><strong>Parent 1:</strong> John Doe (021 555 1234)</p>
-                        <p><strong>Parent 2:</strong> Jane Doe (021 555 9876)</p>
-                        <p><strong>Family Doctor:</strong> Dr. Doe (Springs Medical)</p>
-                    </div>
-
-                    <div class="information action-plan">
-                        <h3>Medical Action Plan:</h3.>
-                        <p>Severe Peanut Allergy.    </p>
-                        <p>EpiPen located in the main office front desk. If exposure occurs, administer EpiPen immediately and call 111.</p>
-                    </div>
-                </div>
-
-                <div class="visit-log">
-                    <h1>Recent Clinic Visits</h3>
-                    <table>
+            <section class="table-container settings-card">
+                <table class="data-table">
+                    <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Time of Visit</th>
-                            <th>Reason</th>
-                            <th>Action Taken</th>
+                            <th>Student Name</th>
+                            <th>Year Level</th>
+                            <th>Age</th>
+                            <th>Medical Conditions</th>
                         </tr>
-                        <tr>
-                            <td>12/06/2026</td>
-                            <td>11:32 AM</td>
-                            <td>Headache</td>
-                            <td>Rested for 20 mins, given water and paracetamol. Returned to class.</td>
-                        </tr>
-                        <tr>
-                            <td>04/05/2026</td>
-                            <td>2:26 PM</td>
-                            <td>Sprained Ankle in PE</td>
-                            <td>Ice applied, parents called to pick up.</td>
-                        </tr>
-                    </table>
-                    <button class="secondary-btn">Add Return Note</button>
-                </div>
-
+                    </thead>
+                    <tbody id="patient-table-body">
+                    </tbody>
+                </table>
             </section>
         </main>
     </div>
+    <div id="patient-modal" class="modal-overlay hidden">
+        <div class="modal-content settings-card">
+            <span class="close-btn" id="close-modal">&times;</span>
+            
+            <div class="modal-header">
+                <h2 id="modal-name">Student Name</h2>
+            </div>
+            
+            <div class="modal-body">
+                <p><strong>Year Level:</strong> <span id="modal-year"></span></p>
+                <p><strong>Age:</strong> <span id="modal-age"></span></p>
+                <p><strong>Conditions/Allergies:</strong> <span id="modal-conditions"></span></p>
+                <p><strong>Emergency Contact:</strong> <span id="modal-contact"></span></p>
+            </div>
+            
+            <button class="primary-btn" style="width: 100%; margin-top: 15px;">View Full Action Plan</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
