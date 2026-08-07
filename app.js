@@ -1,4 +1,5 @@
 //Dummy Data is used
+if (localStorage. getItem("paients")== null) {
 let dummyPatients = [
     { name: "Sarah Doe", year: 13, age: 17, conditions: "Peanut Allergy", contact: "Jane Doe (021 555 0192)" },
     { name: "James Smith", year: 9, age: 14, conditions: "Type 1 Diabetes", contact: "Mark Smith (021 555 8374)" },
@@ -6,10 +7,13 @@ let dummyPatients = [
     { name: "Leo Cheng", year: 10, age: 15, conditions: "Bee Sting Anaphylaxis", contact: "Wei Cheng (021 555 2211)" }
 ];
 
+localStorage.setItem("patients", JSON.stringify(dummyPatients));
+
+}
 
 window.onload = function() {
     let tableBody = document.getElementById("patient-table-body");
-    
+    let newStudentForm = document.getElementById("new-student-form");
 
     if (tableBody != null) {
         let tableHTML = ""; 
@@ -29,6 +33,34 @@ window.onload = function() {
         
 
         tableBody.innerHTML = tableHTML;
+    }
+
+if (newStudentForm != null) {
+    newStudentForm.onsubmit = function(event) {
+        event.preventDefault();
+
+        let newName = document.getElementById("student-name").value;
+        let newYear = document.getElementById("student-year").value;
+        let newAge = document.getElementById("student-age").value;
+        let NewConditions = document.getElementById("student-conditions").value;
+
+        if (newAllergies =="") {
+            newAllergies = "N/A";
+        }
+        let newPatient = {
+            name: newName,
+            year: newYear,
+            age: newAge,
+            conditions: newConditions,
+        
+
+            };
+            allPatients.push(newPatient);
+            localStorage.setItem("patients", JSON.stringify(allPatients));
+
+            alert(newName + " has been added to the patient list.");
+            newStudentForm.reset();
+        };
     }
 };
 
