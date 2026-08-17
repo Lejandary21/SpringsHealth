@@ -1,5 +1,5 @@
 //Dummy Data is used
-if (localStorage. getItem("paients")== null) {
+if (localStorage. getItem("patients")== null) {
 let dummyPatients = [
     { name: "Sarah Doe", year: 13, age: 17, conditions: "Peanut Allergy", contact: "Jane Doe (021 555 0192)" },
     { name: "James Smith", year: 9, age: 14, conditions: "Type 1 Diabetes", contact: "Mark Smith (021 555 8374)" },
@@ -11,6 +11,10 @@ localStorage.setItem("patients", JSON.stringify(dummyPatients));
 
 }
 
+let savedData = localStorage.getItem("patients");
+let allPatients = JSON.parse(savedData);
+
+
 window.onload = function() {
     let tableBody = document.getElementById("patient-table-body");
     let newStudentForm = document.getElementById("new-student-form");
@@ -19,8 +23,8 @@ window.onload = function() {
         let tableHTML = ""; 
         
 
-        for (let i = 0; i < dummyPatients.length; i++) {
-            let patient = dummyPatients[i];
+        for (let i = 0; i < allPatients.length; i++) {
+            let patient = allPatients[i];
             
 
             tableHTML += "<tr>";
@@ -31,7 +35,6 @@ window.onload = function() {
             tableHTML += "</tr>";
         }
         
-
         tableBody.innerHTML = tableHTML;
     }
 
@@ -52,6 +55,7 @@ if (newStudentForm != null) {
             year: newYear,
             age: newAge,
             conditions: newConditions,
+            contact: "Pending Update" // I added this so the website doesn't break from new entries
         
 
             };
