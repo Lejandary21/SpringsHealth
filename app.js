@@ -1,7 +1,7 @@
 //Dummy Data is used
 if (localStorage. getItem("patients")== null) {
 let dummyPatients = [
-    { name: "Sarah Doe", year: 13, age: 17, conditions: "Peanut Allergy", contact: "Jane Doe (021 555 0192)" },
+    { name: "Sarah Doe", year: 13, age: 17, conditions: "Severe Peanut Allergy", contact: "Jane Doe (021 555 0192)" },
     { name: "James Smith", year: 9, age: 14, conditions: "Type 1 Diabetes", contact: "Mark Smith (021 555 8374)" },
     { name: "Aroha Rata", year: 13, age: 18, conditions: "N/A", contact: "Mere Rata (027 555 9931)" },
     { name: "Leo Cheng", year: 10, age: 15, conditions: "Bee Sting Anaphylaxis", contact: "Wei Cheng (021 555 2211)" }
