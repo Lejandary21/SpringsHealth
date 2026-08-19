@@ -32,6 +32,7 @@ window.onload = function() {
             tableHTML += "<td>Year " + patient.year + "</td>";
             tableHTML += "<td>" + patient.age + "</td>";
             tableHTML += "<td>" + patient.conditions + "</td>";
+            tableHTML += "<td>" + patient.contact + "</td>";
             tableHTML += "</tr>";
         }
         
@@ -46,6 +47,7 @@ if (newStudentForm != null) {
         let newYear = document.getElementById("student-year").value;
         let newAge = document.getElementById("student-age").value;
         let NewConditions = document.getElementById("student-conditions").value;
+        let newContact = document.getElementById("student-contact").value;
 
         if (newAllergies =="") {
             newAllergies = "N/A";
