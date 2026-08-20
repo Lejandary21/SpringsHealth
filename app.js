@@ -46,18 +46,18 @@ if (newStudentForm != null) {
         let newName = document.getElementById("student-name").value;
         let newYear = document.getElementById("student-year").value;
         let newAge = document.getElementById("student-age").value;
-        let NewConditions = document.getElementById("student-conditions").value;
+        let newConditions = document.getElementById("student-conditions").value;
         let newContact = document.getElementById("student-contact").value;
 
-        if (newAllergies =="") {
-            newAllergies = "N/A";
+        if (newConditions =="") {
+            newConditions = "N/A";
         }
         let newPatient = {
             name: newName,
             year: newYear,
             age: newAge,
             conditions: newConditions,
-            contact: "Pending Update" // I added this so the website doesn't break from new entries
+            contact: newContact,
         
 
             };
@@ -72,7 +72,7 @@ if (newStudentForm != null) {
 
 
 function openModal(index) {
-    let patient = dummyPatients[index];
+    let patient = allPatients[index];
     
 
     document.getElementById("modal-name").innerText = patient.name;
