@@ -25,6 +25,7 @@ window.onload = function() {
 
         for (let i = 0; i < allPatients.length; i++) {
             let patient = allPatients[i];
+
             
 
             tableHTML += "<tr>";
