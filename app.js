@@ -14,15 +14,18 @@ localStorage.setItem("patients", JSON.stringify(dummyPatients));
 let savedData = localStorage.getItem("patients");
 let allPatients = JSON.parse(savedData);
 
+let draggedIndext = null;
+
 
 window.onload = function() {
     let tableBody = document.getElementById("patient-table-body");
     let newStudentForm = document.getElementById("new-student-form");
 
     if (tableBody != null) {
-        let tableHTML = ""; 
+        buildTable();
         
 
+    
         for (let i = 0; i < allPatients.length; i++) {
             let patient = allPatients[i];
 
@@ -71,6 +74,57 @@ if (newStudentForm != null) {
     }
 };
 
+function buildTable(){
+    tableBody = document.getElementById("patient-table-body");
+    tableHTML = "";
+
+    for (let i = 0; i < allPatients.length; i++) {
+        let patient = allPatients[i];
+
+        tableHTML += "<tr draggable='true' ondragstart='dragStart(" + i + ")' ondragover='dragOver(event)' ondrop='drop(" + i + ")'>";
+
+        tableHTML += "<td><span class='patient-name-link' onclick='openModal(" + i + ")'>" + patient.name + "</span></td>";
+        tableHTML +=  "<td>Year " + patient.year + "</td>";
+        tableHTML += "<td>" + patient.age + "</td>";
+        tableHTML += "<td>" + patient.conditions + "</td>";
+        tableHTML += "<td>" + patient.contact + "</td>";
+        tableHTML += "</tr>";
+
+        tableHTML += "<td><button onclick='deletePatient(" + i + ")'>Delete</button> <button onclick='editPatient(" + i + ")'>Edit</button></td>";
+        tableHTML += "</tr>";
+        }
+
+        tableBody.innerHTML = tableHTML;
+    }
+
+function deletePatient(index) {
+    localStorage.setItem("patients", JSON.stringify(allPatients));
+    buildTable();
+
+function editPatient(index) {
+    let newName = prompt("Edit student name:", allPatients[index].name);
+    if (newName != null && newName !="") {
+        allPatients[index].name = newName;
+        localStorage.setItem("patients", JSON.stringify(allPatients));
+        buildTable();
+    }
+}
+
+function startDrag(index) {
+    draggedIndex = index; 
+}
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function drop(targetIndex) {
+    let movedPatient = allPatients.splice(draggedIndex, 1)[0];
+    allPatients.splice(targetIndex, 0, movedPatient);
+    localStorage.setItem("patients", JSON.stringify(allPatients));
+}
+
+}
 
 function openModal(index) {
     let patient = allPatients[index];
