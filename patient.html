@@ -34,7 +34,12 @@
                     <span class="user-name">Anon Nurse Admin</span>
                 </div>
             </header>
+
+            <div style = "display: flex; justify-content: flex-end; margin-bottom: 15px;">
+                <button id="edit-table-btn" class="secondary-btn" onclick="toggleEditMode()"> Edit Patients</button>
+            </div>
             <section class="table-container settings-card">
+               
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -43,6 +48,8 @@
                             <th>Age</th>
                             <th>Medical Conditions</th>
                             <th>Emergency Contact</th>
+
+                            <th id="action-header" style="display: none;">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="patient-table-body">
